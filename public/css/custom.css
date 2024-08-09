@@ -1,0 +1,94 @@
+@layer utilities {
+    /* Courses - Purple */
+    .w-container {
+        width: 66rem;
+    }
+
+    .w-101 {
+        width: 20rem;
+    }
+
+    /* IconCards - Purple*/
+    .w-120 {
+        width: 33rem;
+    }
+    .w-100 {
+        width: 22rem;
+    }
+
+    /* AboutUs - Purple*/
+    .w-t {
+        width: 80rem;
+    }
+    .w-sm {
+        width: 44rem;
+    }
+
+    /*index(dados)  */
+    .h-100 {
+        height: 36rem;
+    }
+
+    .h-101 {
+        height: 32.5rem;
+    }
+
+    .p-h {
+        padding: 0.5rem;
+    }
+
+    .w-dados {
+        width: 22rem;
+    }
+
+    /* index(content) */
+    .right-100 {
+        right: 26rem;
+    }
+
+    .right-101 {
+        right: 27rem;
+    }
+
+    .right-102 {
+        right: 28rem;
+    }
+    .borderr-right-sm {
+        border-radius: 0 0 1rem 0;
+        padding: 0.2rem;
+        padding-left: -0.1rem;
+    }
+    .rounded-left-right-border {
+        border-bottom-right-radius: 2.1rem;
+        border-top-right-radius: 10.1rem;
+    }
+    /*ONGS*/
+    .text-7xl {
+        font-size: 10rem;
+        line-height: 0.1;
+    }
+    .text-8xl {
+        font-size: 14rem;
+        line-height: 0.1;
+    }
+    .w-26{
+        width: 6.5rem;
+    }
+    .border-4{
+        border-width: 4px;
+    }
+    .rounded-4xl{
+        border-radius: 0.95rem
+    }
+    
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
