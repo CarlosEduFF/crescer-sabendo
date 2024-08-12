@@ -14,22 +14,23 @@
 
 </head>
 <script>
-const navbarLinks = document.querySelectorAll('.navbar nav a');
+    const navbarLinks = document.querySelectorAll('.navbar nav a');
 
-navbarLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const targetId = link.getAttribute('href').replace('#', '');
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
+    navbarLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').replace('#', '');
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 </script>
+
 <body class="bg-gray-100 overflow-x-hidden margin-auto">
     <!-- Header  -->
     <header class="bg-white ">
@@ -92,22 +93,22 @@ navbarLinks.forEach((link) => {
     <!-- End Header -->
 
     <!-- Where I am -->
-    <div id="home" class="relative w-screen h-screen mb-4 md:mb-10">
-        <div class="absolute inset-0 bg-gray-100"></div>
-        <!-- Image -->
-        <img src="{{ asset('images/backContent-Yellow.png') }}" alt=""
-            class="absolute inset-0 w-full h-full object-cover">
-
+    <div id="home"
+        class=" w-screen h-screen flex justify-center items-center bg-[url('/public/images/backContent-Yellow.png')] bg-no-repeat bg-cover overflow-hidden">
         <!-- Overlay Div -->
-        <div id="overlay"
-            class="mr-3 absolute md:left-20 md:top-20 md:right-20 md:bottom-20 flex items-center justify-center flex-col md:flex-row">
-            <div id="divContent" class="bg-white rounded-3xl shadow-2xl p-14 w-full max-h-xl text-center">
-                <h1 class="text-5xl font-itim mb-4">Encontre ONGs que transformam vidas através da educação infantil.
-                </h1>
-                <p class="text-gray-700 text-3xl font-itim">Conectando você a projetos que moldam o amanhã perto da sua
-                    casa.</p>
-                <div class="flex items-center justify-center flex-wrap max-w-md mx-auto my-4">
-                    <label class="relative block w-full md:w-1/2">
+
+        <div class="bg-white w-2/3 h-4/6 rounded-3xl shadow-2xl p-5">
+            <div class="w-full h-full flex flex-col justify-center items-center">
+                <div class=" w-full flex flex-col p-4">
+                    <h1 class="text-black text-2xl lg:text-6xl sm:text-5xl font-itim mb-4 text-center">Encontre ONGs que transformam vidas através da
+                        educação
+                        infantil.</h1>
+                    <p class="text-black text-lg lg:5xl sm:text-3xl font-itim text-center">Conectando você a projetos que moldam o amanhã
+                        perto
+                        da sua casa.</p>
+                </div>
+                <div class="flex items-center justify-center flex-col sm:flex-row  max-w-md mx-4">
+                    <label class="relative block w-full ">
                         <span class="sr-only">Search</span>
                         <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                             <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 50 40">
@@ -116,17 +117,18 @@ navbarLinks.forEach((link) => {
                             </svg>
                         </span>
                         <input
-                            class="block bg-gray-100 w-full border-2 border-customYellow rounded-full py-2 pl-9 pr-3 shadow appearance-none  text-gray-700 leading-tight focus:outline-none focus:shadow-outline "
-                            placeholder="Onde você está?" type="text" name="search" name="Ondevoceesta?" />
+                            class="block bg-gray-100 w-full border-2 border-customYellow rounded-full py-2 pl-9 pr-3 lg:pr-20 shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            placeholder="Onde você está?" type="text" name="search" />
                     </label>
                     <button
-                        class="w-full md:w-40 h-10 bg-customYellow hover:bg-yellow-500 rounded-full font-bold md:ml-2">
-                        Pesquisar
-                    </button>
+                        class="w-full md:w-40 h-10 bg-customYellow hover:bg-yellow-500 rounded-full font-bold md:ml-2">Pesquisar</button>
                 </div>
+
+
             </div>
         </div>
     </div>
+
     <!-- End Where I am  -->
 
 
@@ -177,6 +179,7 @@ navbarLinks.forEach((link) => {
         </div>
     </div>
     <!-- END Approaches -->
+
     <!--Positives Points-->
     <div id="gridCourses" class="grid grid-cols-1 md:grid-cols-3 gap-y-12 my-28">
         <div class="bg-customGreen2 shadow-xl rounded-3xl  w-80 h-40 mx-auto items-center">
@@ -218,416 +221,287 @@ navbarLinks.forEach((link) => {
         </div>
     </div>
     <!--end Positives Points -->
+
+    <!-- Divider Point -->
     <div class="w-full h-16 bg-gray-100"></div>
+    <!-- END Divider Point -->
 
     <!--Rating-->
-    <div class=" my-14 mx-10 max-w-full">
-        <p class="font-itim font-bold text-4xl">ONGs que priorizam a inclusão</p>
-    </div>
-    <div id="gridCourses" class="grid grid-cols-1 md:grid-cols-3 mb-20 md:mb-0 spaced-items gap-5">
+    <div class="flex flex-col w-screen h-screen sm:w-full sm:h-full mb-20">
+        <div class=" my-14 mx-10 max-w-full">
+            <p class="font-itim font-bold text-4xl">ONGs que priorizam a inclusão</p>
+        </div>
+        <div id="gridCourses"
+            class="grid grid-cols-1 md:grid-cols-3 spaced-items gap-5 h-screen w-screen sm:w-full sm:h-full">
 
-        <div class="flex items-center justify-center gap-4">
-            <div class="w-24 h-20 border border-gray-300 rounded">
-                <!-- Espaço para a foto -->
-            </div>
-            <div class="flex flex-col justify-center w-40">
-                <h3 class="font-bold text-lg">Crescer Sabendo</h3>
-                <p class="text-gray-600">Alfabetização/Inclusão...</p>
-                <div class="flex items-center">
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
+            <div class="flex items-center justify-center gap-4  ">
+                <div class="w-24 h-20 border border-gray-300 rounded">
+                    <!-- Espaço para a foto -->
                 </div>
-                <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
-            </div>
-        </div>
+                <div class="flex flex-col justify-center w-40">
+                    <h3 class="font-bold text-lg">Crescer Sabendo</h3>
+                    <p class="text-gray-600">Alfabetização/Inclusão...</p>
 
-        <div class="flex items-center justify-center gap-4">
-            <div class="w-24 h-20 border border-gray-300 rounded">
-                <!-- Espaço para a foto -->
-            </div>
-            <div class="flex flex-col justify-center w-40">
-                <h3 class="font-bold text-lg">Crescer Sabendo</h3>
-                <p class="text-gray-600">Alfabetização/Inclusão...</p>
-                <div class="flex items-center">
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                </div>
-                <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
-            </div>
-        </div>
 
-        <div class="flex items-center justify-center gap-4">
-            <div class="w-24 h-20 border border-gray-300 rounded">
-                <!-- Espaço para a foto -->
-            </div>
-            <div class="flex flex-col justify-center w-40">
-                <h3 class="font-bold text-lg">Crescer Sabendo</h3>
-                <p class="text-gray-600">Alfabetização/Inclusão...</p>
-                <div class="flex items-center">
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
+                    <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
                 </div>
-                <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
+            </div>
+
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-24 h-20 border border-gray-300 rounded">
+                    <!-- Espaço para a foto -->
+                </div>
+                <div class="flex flex-col justify-center w-40">
+                    <h3 class="font-bold text-lg">Crescer Sabendo</h3>
+                    <p class="text-gray-600">Alfabetização/Inclusão...</p>
+
+                    <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-24 h-20 border border-gray-300 rounded">
+                    <!-- Espaço para a foto -->
+                </div>
+                <div class="flex flex-col justify-center w-40">
+                    <h3 class="font-bold text-lg">Crescer Sabendo</h3>
+                    <p class="text-gray-600">Alfabetização/Inclusão...</p>
+
+                    <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-24 h-20 border border-gray-300 rounded">
+                    <!-- Espaço para a foto -->
+                </div>
+                <div class="flex flex-col justify-center w-40">
+                    <h3 class="font-bold text-lg">Crescer Sabendo</h3>
+                    <p class="text-gray-600">Alfabetização/Inclusão...</p>
+
+                    <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-24 h-20 border border-gray-300 rounded">
+                    <!-- Espaço para a foto -->
+                </div>
+                <div class="flex flex-col justify-center w-40">
+                    <h3 class="font-bold text-lg">Crescer Sabendo</h3>
+                    <p class="text-gray-600">Alfabetização/Inclusão...</p>
+
+                    <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-24 h-20 border border-gray-300 rounded">
+                    <!-- Espaço para a foto -->
+                </div>
+                <div class="flex flex-col justify-center w-40">
+                    <h3 class="font-bold text-lg">Crescer Sabendo</h3>
+                    <p class="text-gray-600">Alfabetização/Inclusão...</p>
+
+                    <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
+                </div>
             </div>
         </div>
-        <div class="flex items-center justify-center gap-4">
-            <div class="w-24 h-20 border border-gray-300 rounded">
-                <!-- Espaço para a foto -->
-            </div>
-            <div class="flex flex-col justify-center w-40">
-                <h3 class="font-bold text-lg">Crescer Sabendo</h3>
-                <p class="text-gray-600">Alfabetização/Inclusão...</p>
-                <div class="flex items-center">
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                </div>
-                <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
-            </div>
-        </div>
-        <div class="flex items-center justify-center gap-4">
-            <div class="w-24 h-20 border border-gray-300 rounded">
-                <!-- Espaço para a foto -->
-            </div>
-            <div class="flex flex-col justify-center w-40">
-                <h3 class="font-bold text-lg">Crescer Sabendo</h3>
-                <p class="text-gray-600">Alfabetização/Inclusão...</p>
-                <div class="flex items-center">
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                </div>
-                <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
-            </div>
-        </div>
-        <div class="flex items-center justify-center gap-4">
-            <div class="w-24 h-20 border border-gray-300 rounded">
-                <!-- Espaço para a foto -->
-            </div>
-            <div class="flex flex-col justify-center w-40">
-                <h3 class="font-bold text-lg">Crescer Sabendo</h3>
-                <p class="text-gray-600">Alfabetização/Inclusão...</p>
-                <div class="flex items-center">
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                </div>
-                <p class="text-gray-500 text-sm mt-1">7h as 19h</p>
-            </div>
-        </div>
-    </div>
     </div>
     <!--END Rating-->
 
-    <!--ONG-->
-    <div id="home" class="relative w-full h-screen flex items-center justify-center mb-4 md:mb-10 -z-40">
-        <!-- Image -->
-        <img src="{{ asset('images/backContent-Yellow2.png') }}" alt=""
-            class="absolute inset-0 w-full h-full object-cover">
-        <!-- Overlay Div -->
-        <div id="overlay" class="flex flex-wrap md:flex-no-wrap items-center justify-center">
-            <div class="w-full md:w-1/2 text-left">
-                <h1 class="text-7xl font-itim mb-4">É uma ONG?</h1>
-                <p class="text-black text-4xl font-itim mb-4">Junte-se a nós na<br> missão de<br> transformar a<br>
-                    educação
-                    infantil.</p>
-                <button
-                    class="bg-customGreen2 hover:bg-green-800 text-black font-bold py-2 px-4 rounded-full w-52 md:w-60 h-14 focus:outline-none focus-shadow-outline">Cadastrar</button>
-            </div>
-            <div class="w-full md:w-1/2">
-                <img src="{{ asset('images/Child.png') }}" alt="" class="max-w-full h-auto mt-4 mx-auto">
-            </div>
+    <!-- ONGS -->
+    <div id="home"
+        class="relative w-full h-screen flex flex-col sm:flex-row items-center justify-center bg-[url('/public/images/backContent-Yellow2.png')] bg-no-repeat bg-cover bg-center  ">
+        <!-- Texto e Botão -->
+        <div
+            class="w-full sm:w-1/2 flex flex-col justify-center items-center text-center sm:text-left sm:items-center mb-8 sm:mb-0">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-itim text-black mb-4">É uma ONG?</h1>
+            <p class=" sm:text-4xl font-serif text-black mb-4">
+                Junte-se a nós na<br>
+                missão de<br>
+                transformar a<br>
+                educação infantil.
+            </p>
+            <button
+                class="bg-customGreen2 hover:bg-green-700 text-black font-bold py-2 px-4 rounded-full w-full sm:w-60 md:w-72 h-12 md:h-14 focus:outline-none focus:ring-2 focus:ring-green-500">
+                Cadastrar
+            </button>
+        </div>
+        <!-- Imagem -->
+        <div class="w-full sm:w-1/2 flex items-center justify-center">
+            <img src="{{ asset('images/Child.png') }}" alt="Criança" class="object-cover max-w-full  w-fit sm:h-fit">
         </div>
     </div>
-    <!--end ONG-->
+    <!-- End ONGS -->
+
 
     <!--ONGS RELACIONATED-->
-
-    <div class=" my-14 mx-10 max-w-full">
-        <p class="font-itim font-bold text-4xl">As melhores ONGs para alfabetização</p>
-    </div>
-    <div id="gridCourses" class="grid grid-cols-1 md:grid-cols-4 my-20">
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+    <div class="flex flex-col w-screen h-screen sm:w-full sm:h-full mb-20">
+        <div class=" my-14 mx-10 max-w-full">
+            <p class="font-itim font-bold text-4xl">As melhores ONGs para alfabetização</p>
+        </div>
+        <div id="gridCourses" class="grid grid-cols-1 md:grid-cols-4 my-20">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="flex items-center justify-center gap-4 my-10">
-            <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
-                <div class="flex flex-col justify-center w-40 h-26 ">
-                    <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
-                        class="w-full h-full object-cover rounded-xl">
+            <div class="flex items-center justify-center gap-4 my-10">
+                <div class="border-2 rounded-xl border-gray-400 w-60 h-26 flex justify-center align-center">
+                    <div class="flex flex-col justify-center w-40 h-26 ">
+                        <img src="{{ asset('images/Casa-Isabel.png') }}" alt=""
+                            class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
     <!--END ONGS RELACIONATED-->
 
 
     <!--Partner-->
-    <div id="home" class="relative w-screen h-screen flex items-center justify-center mb-4 md:mb-10 -z-40">
-        <!-- Image -->
-        <img src="{{ asset('images/backContent-Green.png') }}" alt=""
-            class="absolute inset-0 w-full h-full object-cover">
-        <!-- Overlay Div -->
-        <div id="overlay" class="flex flex-col md:flex-row items-center justify-center space-x-16">
-            <div class="md:w-1/2 order-2 md:order-1">
-                <img src="{{ asset('images/Co-workers.png') }}" alt="" class="w-full h-auto mt-4 mx-auto">
-            </div>
-            <div class="md:w-1/2 text-right order-1 md:order-2">
-                <h1 class="text-7xl font-itim mb-4">QUER AJUDAR?</h1>
-                <p class="text-black text-4xl font-itim mb-4">Encontre e apoie ONGs<br> comprometidas com a<br> educação
-                    das futuras <br>gerações.</p>
-                <button
-                    class="bg-customYellow hover:bg-green-800 text-black font-bold py-2 px-4 rounded-full w-60 h-14">Seja
-                    parceiro</button>
-            </div>
+    <div id="home"
+        class="relative w-full h-screen flex flex-col sm:flex-row-reverse items-center justify-center bg-[url('/public/images/backContent-Green.png')] bg-no-repeat bg-cover bg-center px-4 py-8">
+        <!-- Texto e Botão -->
+        <div
+            class="w-full sm:w-1/2 flex flex-col justify-center items-center text-center sm:text-left sm:items-center mb-8 sm:mb-0">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-itim text-black mb-4">QUER AJUDAR?</h1>
+            <p class=" sm:text-4xl font-serif text-black mb-4">
+                Encontre e apoie ONGs<br>
+                comprometidas com a<br>
+                educação das futuras<br>
+                gerações.
+            </p>
+            <button
+                class="bg-customYellow hover:bg-green-800 text-black font-bold py-2 px-4 rounded-full w-60 h-14">Seja
+                parceiro
+            </button>
+        </div>
+        <!-- Imagem -->
+        <div class="w-full sm:w-1/2 flex items-center justify-center">
+            <img src="{{ asset('images/Co-workers.png') }}" alt="Criança"
+                class="object-cover max-w-full  w-fit sm:h-fit">
         </div>
     </div>
     <!--end Partner-->
 
     <!--Call with US -->
-    <div id="#contactus" class="grid grid-cols-1 md:grid-cols-2 my-20 w-11/12 mx-auto">
-        <!-- Text -->
-        <div class="container max-w-md mx-auto p-6 md:order-1 order-2">
-            <h1 class="text-3xl font-itim mb-4">Entre em contato</h1>
-            <p class="text-black text-xl font-itim mb-4"> Se você tiver dúvidas, sugestões ou reclamações sobre o site,
-                entre em contato conosco pelo e-mail xxxxx@gmail.com. Para dúvidas relacionadas a uma das organizações,
-                consulte as informações de contato disponíveis na página de perfil de cada ONG.</p>
-        </div>
-        <!-- Form -->
-        <div class="container max-w-md mx-auto p-6 md:order-1 order-2">
-            <form>
-                <div class="mb-4">
-                    <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome</label>
-                    <input type="text" id="nome" name="nome"
-                        class="shadow appearance-none border-4 rounded-full border-customYellow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    <div id="#contactus" class="flex flex-col sm:flex-row my-20 w-screen h-full">
+        <div class="flex">
+            <!-- Text -->
+            <div class=" w-full h-full sm:w-1/2 flex justify-center items-center ">
+                <div class="w-2/3">
+                    <h1 class="text-3xl font-itim mb-4 text-start">Entre em contato</h1>
+                    <p class="text-black text-xl  font-itim mb-4"> Se você tiver dúvidas, sugestões ou reclamações sobre
+                        o
+                        site,
+                        entre em contato conosco pelo e-mail xxxxx@gmail.com. Para dúvidas relacionadas a uma das
+                        organizações,
+                        consulte as informações de contato disponíveis na página de perfil de cada ONG.
+                    </p>
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input type="email" id="email" name="email"
-                        class="shadow appearance-none border-4 rounded-full border-customYellow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <!-- Form -->
+            <div class=" w-full h-full sm:w-1/2 flex justify-center items-center ">
+                <div class="w-2/3">
+                    <form>
+                        <div class="mb-4">
+                            <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome</label>
+                            <input type="text" id="nome" name="nome"
+                                class="shadow appearance-none border-4 rounded-full border-customYellow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="shadow appearance-none border-4 rounded-full border-customYellow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="assunto" class="block text-gray-700 text-sm font-bold mb-2">Assunto</label>
+                            <input type="text" id="assunto" name="assunto"
+                                class="shadow appearance-none border-4 rounded-full border-customYellow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="mensagem" class="block text-gray-700 text-sm font-bold mb-2">Sua
+                                mensagem</label>
+                            <textarea
+                                class="mt-1 block w-full border-4 border-customYellow  rounded-xl px-6 py-3"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-customYellow hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus-shadow-outline">Enviar</button>
+                    </form>
                 </div>
-                <div class="mb-4">
-                    <label for="assunto" class="block text-gray-700 text-sm font-bold mb-2">Assunto</label>
-                    <input type="text" id="assunto" name="assunto"
-                        class="shadow appearance-none border-4 rounded-full border-customYellow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-                <div class="mb-4">
-                    <label for="mensagem" class="block text-gray-700 text-sm font-bold mb-2">Sua mensagem</label>
-                    <textarea class="mt-1 block w-full border-4 border-customYellow  rounded-xl px-6 py-3"></textarea>
-                </div>
-                <button type="submit"
-                    class="bg-customYellow hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus-shadow-outline">Enviar</button>
-            </form>
+            </div>
         </div>
     </div>
     <!--END CALL of US-->

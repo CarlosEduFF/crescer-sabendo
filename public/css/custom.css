@@ -80,7 +80,15 @@
     .rounded-4xl{
         border-radius: 0.95rem
     }
-    
+    .text-9xl {
+        font-size: 20rem;
+        line-height: 0.01;
+    }
+    @media (max-width: 1483px) {
+        footer img {
+            height: auto;
+        }
+    }
 }
 
 @keyframes marquee {

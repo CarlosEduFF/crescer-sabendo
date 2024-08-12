@@ -348,12 +348,27 @@ function toggleText(id) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    document
-        .getElementById("mobile-menu-toggle")
-        .addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+
+    mobileMenuToggle.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Função para fechar o menu em telas maiores
+    function handleResize() {
+        if (window.innerWidth > 768) { // 768px é o breakpoint para telas maiores
+            mobileMenu.classList.add("hidden");
+        }
+    }
+
+    // Adiciona o evento resize
+    window.addEventListener("resize", handleResize);
+
+    // Verifica o tamanho da tela ao carregar a página
+    handleResize();
 });
+
 
 
 /*---------------------------------------Modal-----------------------------------------------*/

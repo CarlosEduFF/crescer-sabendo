@@ -48,13 +48,13 @@
                 </div>
             </div>
         </div>
-    </header>
 
-    <div id="mobile-menu" class="hidden bg-white py-2 px-4">
-        <a href="#" class="text-customBlue text-lg font-itim py-2 hover:text-purple-900">Meus Dados</a>
-        <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Mural</a>
-        <a href="#sponsors" class="block text-customRed text-lg font-itim py-2 hover:text-purple-900">Chat</a>
-    </div>
+
+        <div id="mobile-menu" class="hidden bg-white py-2 px-4">
+            <a href="#" class="text-customBlue text-lg font-itim py-2 hover:text-purple-900">Meus Dados</a>
+            <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Mural</a>
+            <a href="#sponsors" class="block text-customRed text-lg font-itim py-2 hover:text-purple-900">Chat</a>
+        </div>
     </header>
     <!-- End Header -->
 
@@ -74,248 +74,78 @@
     </div>
     <!-- END Search -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="authentication-modal" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative p-8 md:w-8/12 sm:10-12 max-h-full mx-auto" style="position: fixed; top: 0; right: 25%; width: 75%; max-width: 75%;">
-        <!-- Modal content -->
-        <div class="relative bg-gray-100 rounded-4xl shadow ">
-            <!-- Modal body -->
-            <div class="modal-body ">
-                <div class="chat-history w-full h-96">
-                    <div class="flex items-center bg-white h-12">
-                        <button type="button"
-                            class="text-gray-400 bg-transparent ml-5 hover:bg-blue-300 rounded-lg text-sm w-8 h-8"
-                            data-modal-hide="authentication-modal">
-                            <img src="{{ asset('images/icons/left-arrow.png') }}" alt="Logo" class="w-7 h-7">
-                        </button>
-                        <div class="flex items-center">
-                            <div
-                                class="border-2 rounded-full border-black w-10 h-10 mx-2 flex justify-center items-center">
-                                <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                    class="rounded-full w-8 h-8 object-cover">
-                            </div>
-                            <h2 class="text-xl font-bold">Nome</h2>
-                        </div>
-                    </div>
-                        <div class="chat-history">
-                            <div class="flex justify-start mb-4 mt-4">
-                                <div
-                                    class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                        class="rounded-full w-8 h-8 object-cover">
-                                </div>
-                                <div class="bg-white rounded-lg shadow p-3">
-                                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-end mb-4">
-                                <div class="bg-white rounded-lg shadow p-3 text-white">
-                                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
-                                </div>
-                                <div
-                                    class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                        class="rounded-full w-8 h-8 object-cover">
-                                </div>
-                            </div>
-                            <div class="flex justify-start mb-4">
-                                <div
-                                    class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                        class="rounded-full w-8 h-8 object-cover">
-                                </div>
-                                <div class="bg-white rounded-lg shadow p-3">
-                                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-end mb-4">
-                                <div class="bg-white rounded-lg shadow p-3 text-white">
-                                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
-                                </div>
-                                <div
-                                    class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                        class="rounded-full w-8 h-8 object-cover">
-                                </div>
-                            </div>
-                            <div class="flex justify-start mb-4">
-                                <div
-                                    class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                        class="rounded-full w-8 h-8 object-cover">
-                                </div>
-                                <div class="bg-white rounded-lg shadow p-3">
-                                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="flex mt-4">
-                            <button class="p-2 rounded-full bg-gray-200 mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg>
-                            </button>
-                            <div class="flex-1 relative mr-2">
-                                <input type="text" placeholder="Uma mensagem..."
-                                    class="block w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                                    <button class="p-2 rounded-full bg-transparent ml-2">
-                                        <img src="{{ asset('images/icons/emojiIcon.png') }}" alt="Logo" class="w-5 h-5">
-                                    </button>
-                                    <button class="p-2 rounded-full bg-transparent ml-2">
-                                        <img src="{{ asset('images/icons/letterAIcon.png') }}" alt="Logo"
-                                            class="w-5 h-5">
-                                    </button>
-                                    <button class="p-2 rounded-full bg-transparent ml-2">
-                                        <img src="{{ asset('images/icons/uploadIcon.png') }}" alt="Logo"
-                                            class="w-5 h-5">
-                                    </button>
-                                </div>
-                            </div>
-                            <button
-                                class="block text-white bg-blue-500 hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 active:bg-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center w-14 h-10 ">
-                                <img src="{{ asset('images/icons/right-arrow.png') }}" alt="Logo" class="w-5 h-5">
-                            </button>
-                        </div>
-                    </div>
+    <!-- Modal content -->
+    <div class="relative bg-gray-100 w-full h-full flex flex-col">
+        <!-- Header do chat -->
+        <div class="flex items-center bg-white h-12 flex-shrink-0">
+            <a href="{{ url('/teacher-profile-list')}}" type="button" class="text-gray-400 bg-transparent ml-5 hover:bg-blue-300 rounded-lg text-sm w-8 h-8">
+                <img src="{{ asset('images/icons/left-arrow.png') }}" alt="Logo" class="w-7 h-7">
+            </a>
+            <div class="flex items-center ml-4">
+                <div class="border-2 rounded-full border-black w-10 h-10 flex justify-center items-center">
+                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                        class="rounded-full w-8 h-8 object-cover">
                 </div>
+                <h2 class="text-xl font-bold ml-2">Nome</h2>
             </div>
         </div>
+
+        <!-- Conteúdo do chat, com mensagens -->
+        <div class="flex-1 overflow-y-auto p-4">
+            <!-- Exemplo de mensagens no chat -->
+            <div class="flex justify-start mb-4 mt-4">
+                <div class="border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
+                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                        class="rounded-full w-8 h-8 object-cover">
+                </div>
+                <div class="bg-white rounded-lg shadow p-3 ml-2">
+                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
+                </div>
+            </div>
+            <div class="flex justify-end mb-4">
+                <div class="bg-purple-200 rounded-lg shadow p-3 text-white">
+                    <p class="text-gray-700 text-sm">Nome XXXXXXXX</p>
+                </div>
+                <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
+                    <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                        class="rounded-full w-8 h-8 object-cover">
+                </div>
+            </div>
+            <!-- Mais mensagens... -->
+        </div>
+
+        <!-- Input de mensagem e botões -->
+        <footer class="bg-white p-4 flex items-center justify-end fixed bottom-0 left-0 w-full">
+            <button class="p-2 rounded-full bg-gray-200 mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </button>
+            <div class="flex-1 relative">
+                <input type="text" placeholder="Uma mensagem..."
+                    class="block w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 space-x-2">
+                    <button class="p-2 rounded-full bg-transparent">
+                        <img src="{{ asset('images/icons/emojiIcon.png') }}" alt="Logo" class="w-5 h-5">
+                    </button>
+                    <button class="p-2 rounded-full bg-transparent">
+                        <img src="{{ asset('images/icons/letterAIcon.png') }}" alt="Logo" class="w-5 h-5">
+                    </button>
+                    <button class="p-2 rounded-full bg-transparent index">
+                        <img src="{{ asset('images/icons/uploadIcon.png') }}" alt="Logo" class="w-5 h-5">
+                    </button>
+                </div>
+            </div>
+            <button
+                class="ml-2 p-2 text-white bg-blue-500 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full">
+                <img src="{{ asset('images/icons/right-arrow.png') }}" alt="Logo" class="w-5 h-5">
+            </button>
+        </footer>
     </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container mx-auto ">
-        <div class="flex h-screen">
-            <div class="contact-list w-full md:w-1/4 bg-purple-100 p-4">
-
-                <button onclick="iniciarJavaScript()" data-modal-target="authentication-modal"
-                    data-modal-toggle="authentication-modal">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                            <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                    class="rounded-full w-8 h-8 object-cover">
-                            </div>
-                        </div>
-                        <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                    </div>
-                </button>
-
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                            <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                                <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                    class="rounded-full w-8 h-8 object-cover">
-                            </div>
-                        </div>
-                        <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                    </div>
-
-
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        <div class=" border-2 rounded-full border-black w-9 h-9 flex justify-center items-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-8 h-8 object-cover">
-                        </div>
-                    </div>
-                    <span class="text-gray-700 font-medium">Nome XXXXXXXX</span>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </body>
 
 </html>

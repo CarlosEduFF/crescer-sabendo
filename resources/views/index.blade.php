@@ -17,36 +17,27 @@
 <body class="bg-gray-100 overflow-x-hidden">
     <!-- Header  -->
     <header class="bg-white ">
-        <div class="flex items-center justify-between ">
-            <div id="logo" class="flex items-center border bg-customPurple rounded-br-only">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" class=" pl-5 pb-2 pr-7 pt-1">
+        <div class="flex items-center justify-between">
+            <div id="logo" class="flex items-center bg-customPurple rounded-br-only">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="pl-5 pb-2 pr-7 pt-1">
             </div>
 
             <nav id="navbar" class="hidden  md:flex items-center space-x-12 gap-14">
-                <a href="#"
-                    class="text-purple-700  text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3 ">Home</a>
-                <a href="#aboutus"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Sobre
-                    nós</a>
-                <a href="{{ url('/ongs')}}#sponsors"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">ONG's</a>
-                <a href="{{ url('/donates')}}#doacao"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Doações</a>
-                <a href="#contactus"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Fale
-                    Conosco</a>
+                <a href="#" class="text-purple-700  text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3 ">Home</a>
+                <a href="#aboutus" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Sobre nós</a>
+                <a href="/ongs" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">ONG's</a>
+                <a href="#" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Parcerias</a>
+                <a href="#contactus" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Fale Conosco</a>
             </nav>
 
             <div id="userAction" class="hidden md:flex items-center space-x-2 mr-3 ">
                 <a href="{{ url('/signin') }}" class="text-gray-600 hover:text-purple-900 ">
                     <img id="userImg" class="h-10 mr-2" src="{{ asset('images/icons/userIconPurple.png') }}" alt="">
                 </a>
-                <a id="button" href="{{ url('/signup')}}"
-                    class="bg-customPurple ml-3 font-itim text-xl text-white px-3 py-1 rounded-full hover:bg-purple-900">Sign
-                    up</a>
+                <a id="button" href="{{ url('/signup')}}" class="bg-customPurple ml-3 font-itim text-xl text-white px-3 py-1 rounded-full hover:bg-purple-900">Sign up</a>
             </div>
 
-            <div id="mobile-nav" class="md:hidden mr-5 ">
+            <div id="mobile-nav" class="md:hidden mr-5 ml-5 ">
                 <button id="mobile-menu-toggle" class="focus:outline-none">
                     <img class="h-10" src="{{ asset('images/icons/taskPurple.png') }}" alt="">
                 </button>
@@ -57,16 +48,11 @@
         <div id="mobile-menu" class="hidden bg-white  py-2 px-4 ">
             <a href="#" class="text-purple-700 text-lg font-itim py-2  hover:text-purple-900">Home</a>
             <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2  hover:text-purple-900">Sobre nós</a>
-            <a href="{{ url('/ongs')}}#sponsors"
-                class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">ONG's</a>
-            <a href="{{ url('/donates')}}#doacao"
-                class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Doações</a>
-            <a href="#contactus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Fale
-                Conosco</a>
-            <a href="{{ url('/signin') }}"
-                class="block  text-customBlue text-lg font-itim py-2 hover:text-purple-900">Entrar</a>
-            <a href="{{ url('/signup')}}"
-                class="block  text-customBlue text-lg font-itim py-2 hover:text-purple-900">Registrar-se</a>
+            <a href="#" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">ONG's</a>
+            <a href="#" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Parceirias</a>
+            <a href="#contactus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Fale Conosco</a>
+            <a href="{{ url('/signin') }}" class="block  text-customBlue text-lg font-itim py-2 hover:text-purple-900">Entrar</a>
+            <a href="{{ url('/signup')}}" class="block  text-customBlue text-lg font-itim py-2 hover:text-purple-900">Registrar-se</a>
         </div>
     </header>
     <!-- End Header -->
@@ -206,7 +192,6 @@
         </div>
 
 
-    </div>
     </div>
     <!-- End Dados -->
 

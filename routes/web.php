@@ -32,6 +32,9 @@ Route::get('/teacher-profile', function () {
 Route::get('/teacher-profile-mural', function () {
     return view('teacher-profile-mural');
 });
+Route::get('/teacher-profile-list', function () {
+    return view('/teacher-profile-list');
+});
 Route::get('/teacher-profile-chat', function () {
     return view('/teacher-profile-chat');
 });

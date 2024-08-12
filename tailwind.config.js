@@ -23,6 +23,10 @@ export default {
             fontFamily: {
                 itim: ["Itim", "cursive"],
             },
+            backgroundImage: {
+                'custom-image': "url('public/images/backContent-Yellow.png')",
+                'footer-texture': "url('/img/footer-texture.png')",
+            },
         },
     },
     plugins: [

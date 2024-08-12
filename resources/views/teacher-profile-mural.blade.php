@@ -31,7 +31,7 @@
                         Dados</a>
                     <a href="{{ url('/teacher-profile-mural')}}#teacher-profile-mural"
                         class="text-red-600 text-2xl font-itim hover:text-purple-900 underline underline-offset-4 hover:pb-3">Mural</a>
-                    <a href="{{ url('/teacher-profile-chat')}}#sponsors"
+                    <a href="{{ url('/teacher-profile-list')}}#sponsors"
                         class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:pb-3">Chat</a>
                 </nav>
             </div>
@@ -53,7 +53,7 @@
     <div id="mobile-menu" class="hidden bg-white py-2 px-4">
     <a href="{{ url('/teacher-profile')}}" class="text-customBlue text-lg font-itim py-2 hover:text-purple-900">Meus Dados</a>
         <a href="{{ url('/teacher-profile-mural')}}#teacher-profile-mural" class="block text-customRed text-lg font-itim py-2 hover:text-purple-900">Mural</a>
-        <a href="{{ url('/teacher-profile-chat')}}#sponsors" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Chat</a>
+        <a href="{{ url('/teacher-profile-list')}}#sponsors" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Chat</a>
     </div>
     </header>
     <!-- End Header -->

@@ -11,101 +11,157 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <script src=" {{ asset('js/script.js') }} "></script>
     @vite('resources/css/app.css')
-
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 </head>
 
 <body class="bg-gray-100 overflow-x-hidden margin-auto">
     <!-- Header  -->
-    <header class="bg-white">
-        <div class="flex items-center w-full">
-            <div class="flex justify-center ">
-                <div id="logo"
-                    class="flex items-center border bg-customRed rounded-br-only sm:mr-4 md:mr-8 md:w-72 sm:w-40 md:h-20 sm:h-20 pl-5 pb-2 pr-7 pt-1 md:text-5xl sm:text-2xl">
-                    <p class=" font-itim md:text-5xl sm:text-2xl text-white">Meu Perfil</p>
-                </div>
+    <header class="bg-white w-full">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div id="logo" class="flex items-center border bg-customRed rounded-br-only pl-5 pr-7 pt-1 pb-2">
+                <p class="font-itim text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Meu Perfil</p>
             </div>
-            <div class="flex-grow justify-center">
-                <nav id="navbar" class="hidden md:flex items-center space-x-8 gap-4 mx-10">
-                    <a href="{{ url('/home')}}#home"
-                        class="text-red-600 text-2xl font-itim hover:text-purple-900 underline underline-offset-4 hover:pb-3">Meus
-                        Dados</a>
-                    <a href="{{ url('/teacher-profile-mural')}}#teacher-profile-mural"
-                        class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:pb-3">Mural</a>
-                    <a href="{{ url('/teacher-profile-chat')}}#sponsors"
-                        class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:pb-3">Chat</a>
-                    <a href="{{ url('/grades')}}#sponsors"
-                        class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Notas</a>
-                </nav>
-            </div>
-            <div class="flex justify-end w-1/3">
-                <div id="mobile-nav" class="md:hidden flex justify-end">
+
+            <!-- Navbar -->
+            <nav id="navbar" class="hidden md:flex items-center space-x-6 mx-4">
+                <a href="{{ url('/teacher-profile')}}"
+                    class="text-customBlue text-xl lg:text-2xl font-itim hover:text-purple-900 underline underline-offset-4 hover:pb-3">
+                    Meus Dados
+                </a>
+                <a href="{{ url('/teacher-profile-mural')}}#teacher-profile-mural"
+                    class="text-customBlue text-xl lg:text-2xl font-itim hover:text-purple-900 hover:pb-3">
+                    Mural
+                </a>
+                <a href="{{ url('/teacher-profile-list')}}#sponsors"
+                    class="text-red-600 text-xl lg:text-2xl font-itim underline underline-offset-4 hover:text-purple-900 hover:pb-3">
+                    Chat
+                </a>
+                <a href="{{ url('/grades')}}#sponsors"
+                    class="text-customBlue text-xl lg:text-2xl font-itim hover:text-purple-900 hover:pb-3">
+                    Notas
+                </a>
+            </nav>
+
+            <!-- User Action / Mobile Menu Toggle -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Toggle -->
+                <div id="mobile-nav" class="md:hidden flex items-center">
                     <button id="mobile-menu-toggle" class="focus:outline-none">
-                        <img class=" h-10 w-10" src="{{ asset('images/icons/taskbarRed.png') }}" alt="">
+                        <img class="h-10 w-10" src="{{ asset('images/icons/taskbarRed.png') }}" alt="">
                     </button>
                 </div>
-                <div id="userAction" class="md:absolute top-0 right-0 flex items-center mt-6 space-x-2 mr-3">
-                    <a href="{{ url('/signin') }}" class="text-gray-600 hover:text-purple-900 md:block hidden">
-                        <img id="userImg" class="h-10 mr-2" src="{{ asset('images/icons/userIconRed.png') }}" alt="">
-                    </a>
-                </div>
+                <!-- User Icon -->
+                <a href="{{ url('/signin') }}" class="text-gray-600 hover:text-purple-900 hidden md:block">
+                    <img id="userImg" class="h-10 mr-5" src="{{ asset('images/icons/userIconRed.png') }}" alt="">
+                </a>
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden bg-white py-2 px-4">
-            <a href="#" class="text-customRed text-lg font-itim py-2 hover:text-purple-900">Meus Dados</a>
-            <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Mural</a>
-            <a href="{{ url('/teacher-profile-chat')}}#sponsors"
-                class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Chat</a>
+            <a href="{{ url('/teacher-profile')}}" class="text-customBlue text-lg font-itim py-2 hover:text-purple-900">
+                Meus Dados
+            </a>
+            <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">
+                Mural
+            </a>
+            <a href="{{ url('/teacher-profile-list')}}#sponsors"
+                class="block text-customRed text-lg font-itim py-2 hover:text-purple-900">
+                Chat
+            </a>
+            <a href="{{ url('/grades')}}#sponsors"
+                class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">
+                Notas
+            </a>
         </div>
     </header>
+
     <!-- End Header -->
     <!--Home Profile-->
-    <div id="ProfileImage" class="relative w-screen h-52 mb-4 md:mb-10">
-        <div class="relative inset-0 bg-customBrown w-full h-52 md:h-40 lg:h-52 sm:h-32">
-            <!-- diminui a altura em telas menores -->
-            <div class="absolute bottom-4 sm:right-4 mx-10 right-2">
-                <a href="{{ url('/signin') }}" class="text-gray-600 hover:text-purple-900">
-                    <img src="{{ asset('images/icons/EditIcon.png') }}" alt="Logo" class="w-10 h-10 sm:w-6 sm:h-6">
-                </a>
+    <div class="h-full bg-gray-100 p-8 ">
+        <div class="bg-white rounded-lg shadow-xl pb-8">
+            <div x-data="{ openSettings: false }" class="absolute right-12 mt-4 rounded">
+                <button @click="openSettings = !openSettings"
+                    class="border border-gray-400 p-2 rounded text-gray-300 hover:text-gray-300 bg-gray-100 bg-opacity-10 hover:bg-opacity-20"
+                    title="Settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                        </path>
+                    </svg>
+                </button>
+                <div x-show="openSettings" @click.away="openSettings = false"
+                    class="bg-white absolute right-0 w-40 py-2 mt-1 border border-gray-200 shadow-2xl"
+                    style="display: none;">
+                    <div class="py-2 border-b">
+                        <p class="text-gray-400 text-xs px-6 uppercase mb-1">Opções</p>
+                        <button class="w-full flex items-center px-6 py-1.5 space-x-2 hover:bg-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.232 5.232l3.536 3.536M4 20h4.586a1 1 0 00.707-.293l9.414-9.414a1 1 0 00-1.414-1.414L8 18.293A1 1 0 007.293 19H4a1 1 0 01-1-1v-3.586a1 1 0 01.293-.707l9.414-9.414a1 1 0 011.414 1.414L5.414 15.586A1 1 0 005 16v4z" />
+                            </svg>
+                            <span class="text-sm text-gray-700">Editar Perfil</span>
+                        </button>
+
+                    </div>
+                    <div class="py-2">
+                        <p class="text-gray-400 text-xs px-6 uppercase mb-1">Conta</p>
+                        <a href="">
+                            <button class="w-full flex items-center py-1.5 px-6 space-x-2 hover:bg-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M13 5l7 7l-7 7" />
+                                    <path d="M5 12h14" />
+                                </svg>
+                                <span class="text-sm text-gray-700">Sair</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="ProfileIcon" class="z-10 absolute bottom-0 left-0 translate-y-1/2 md:mx-12 mx-4 my-3">
-            <div
-                class="border-2 border-black rounded-full w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 flex justify-center items-center">
-                <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                    class="rounded-full w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 object-cover">
+            <div class="w-full h-[250px]">
+                <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg"
+                    class="w-full h-full rounded-tl-lg rounded-tr-lg">
+            </div>
+            <div class="flex flex-col ml-20 -mt-20">
+                <img src="https://vojislavd.com/ta-template-demo/assets/img/profile.jpg"
+                    class="w-40 border-4 border-white rounded-full">
+                <div class="flex items-start space-x-2 mt-2">
+                    <p class="text-2xl">Nome do Professor</p>
+                </div>
             </div>
         </div>
     </div>
     <!-- END Home Profile-->
 
-
     <!--Divider Menu-->
-    <div class="my-6  w-11/12 flex justify-between items-center relative">
-        <div class="flex-1 flex justify-center">
-            <p class="font-itim font-bold sm:text-4xl">Nome do Aluno</p>
-        </div>
-        <div class=" flex mx-5">
+    <div class="my-6 w-11/12 relative flex items-center mx-auto">
+        <!-- Divider Line -->
+        <div id="Divider" class="w-full h-1 bg-gray-400"></div>
+        <div class="absolute right-0 transform -translate-y-1/2">
             <button onclick="iniciarJavaScript()" data-modal-target="authentication-modal"
                 data-modal-toggle="authentication-modal"
-                class="block text-white bg-transparent hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 active:bg-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                class="block text-white bg-transparent hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-blue-300 active:bg-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                 <img src="{{ asset('images/icons/tres-pontos.png') }}" alt="Logo" class="md:w-10 md:h-10 sm:w-8 sm:h-8">
             </button>
         </div>
-    </div>
-    <div class="flex justify-center">
-        <div id="Divider" class="w-11/12 h-1 bg-gray-400 "></div>
     </div>
     <!--END Divider Menu-->
 
 
     <div id="authentication-modal" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-5 w-12/12 md:w-7/12 mx-auto rounded-lg shadow-lg bg-white mt-14 overflow-y-auto max-h-full">
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full inset-0 h-screen">
+        <div
+            class="relative p-5 w-11/12 sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 mx-auto rounded-lg shadow-lg bg-white overflow-y-auto max-h-[90vh]">
             <!-- Modal content -->
             <div class="flex flex-col items-center justify-center p-4 md:p-5 rounded-t">
                 <button type="button"
-                    class="end-2.5 text-gray-400 bg-transparent hover:bg-blue-300 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center "
+                    class="absolute top-4 right-4 text-gray-400 bg-transparent hover:bg-blue-300 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center"
                     data-modal-hide="authentication-modal">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 14 14">
@@ -117,22 +173,22 @@
             <div class="p-2 md:p-8">
                 <div class="flex flex-col justify-center">
                     <div class="flex flex-col md:flex-row justify-center items-center">
-                        <div class=" w-10/12 md:w-2/3 flex flex-col items-center justify-center mt-5 md:mt-0">
+                        <div class="w-full md:w-1/2 flex flex-col items-center justify-center mt-5 md:mt-0">
                             <div class="bg-gray-200 rounded-lg p-4 h-48 w-full">
                                 <h2 class="text-center text-gray-700 font-bold">IMAGEM</h2>
                             </div>
                             <div
-                                class="bg-red-500  text-white font-bold py-2 px-4 rounded  w-full mt-4 flex justify-center">
+                                class="bg-red-500 text-white font-bold py-2 px-4 rounded w-full mt-4 flex justify-center">
                                 <p>Nome do Curso</p>
                             </div>
                             <div
-                                class="bg-red-500  text-white font-bold py-2 px-4 rounded  w-full mt-4 flex justify-center">
+                                class="bg-red-500 text-white font-bold py-2 px-4 rounded w-full mt-4 flex justify-center">
                                 <p>Horário</p>
                             </div>
                         </div>
-                        <div class=" w-10/12 md:w-2/3 flex flex-col items-center justify-center mt-5 md:mt-0">
-                            <div class="flex flex-col w-5/6 justify-center items-center">
-                                <h2 class="text-xl font-bold mb-4">Informações do curso</h2>
+                        <div class="w-full md:w-1/2 flex flex-col items-center justify-center mt-5 md:mt-0">
+                            <div class="flex flex-col w-full md:w-5/6 justify-center items-center">
+                                <h2 class="text-xl font-bold mb-4 text-center md:text-left">Informações do curso</h2>
                                 <p class="text-gray-700 text-sm break-words flex text-justify">
                                     XXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXXX
                                     XXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXXX
@@ -140,9 +196,8 @@
                                     XXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXXX
                                     XXXXXX XXXXXXXXXXXXXXX XXXXXXXXXXXXXX
                                 </p>
-
                             </div>
-                            <div class="bg-gray-200 rounded-lg p-4 mt-4 w-11/12 md:w-8/12">
+                            <div class="bg-gray-200 rounded-lg p-4 mt-4 w-full md:w-5/6">
                                 <p class="text-gray-700 font-bold">Ong- Crescer Sabendo</p>
                                 <div class="h-1 bg-gray-400 rounded-full mt-2 w-full">
                                     <div class="bg-gray-700 rounded-full h-1 mt-2 w-1/2"></div>
@@ -152,12 +207,14 @@
                         </div>
                     </div>
                     <button
-                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mb-32 mt-4">
-                        BOLETIM</button>
+                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mt-4">
+                        BOLETIM
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!--Data teacher-->
     <div class="w-full h-96 shadow-sm flex justify-center items-center my-14">
@@ -178,186 +235,206 @@
 
     <!--My Courses-->
     <div class="flex flex-wrap justify-between mx-5">
-        <div id="Pt1" class=" w-10/12 md:w-7/12 border-2 border-black rounded-4xl mx-7 md:mx-14 my-10">
-            <div class="my-5 mx-10 max-w-full flex justify-between">
-                <p class="font-itim text-black text-2xl">Meus Cursos</p>
-                <a class="font-itim underline underline-offset-2 text-lg">Ver todos</a>
+        <!-- Meus Cursos -->
+        <div id="Pt1" class="w-full lg:w-7/12 border-2 border-black rounded-4xl mx-7 md:mx-14 my-10">
+            <div class="my-5 mx-5 md:mx-10 max-w-full flex justify-between">
+                <p class="font-itim text-black text-xl md:text-2xl">Meus Cursos</p>
+                <a class="font-itim underline underline-offset-2 text-sm md:text-lg">Ver todos</a>
             </div>
-            <div id="gridCourses" class="grid grid-cols-1 md:grid-cols-3 my-8">
-                <!--Content-->
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+            <div id="gridCourses" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
+                <!-- Content -->
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center gap-4 my-10">
-                    <div class="border-2 rounded-xl border-Black w-52 h-26 flex justify-center align-center">
-                        <div class="flex flex-col justify-center w-40 h-26 ">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
                             <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
                                 class="w-full h-full object-cover rounded-xl">
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--END My Courses-->
 
-        <!-- ONGS NAMES -->
-        <div id="Pt2" class="w-10/12 md:w-3/12 border-2 border-black rounded-4xl mx-7 md:mx-14 my-10">
-            <div class="my-5 mx-10 max-w-full flex justify-center">
-                <p class="font-itim text-black text-4xl">Ongs</p>
-            </div>
-            <div id="gridCourses" class="flex flex-wrap justify-center my-8">
-
-                <!--content-->
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
+                            <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
+                                class="w-full h-full object-cover rounded-xl">
                         </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
+                    </div>
+                </div>
 
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
+                            <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
+                                class="w-full h-full object-cover rounded-xl">
                         </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
+                    </div>
+                </div>
 
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
+                <div class="flex items-center justify-center gap-4 my-5">
+                    <div class="border-2 rounded-xl border-black w-40 sm:w-52 h-26 flex justify-center align-center">
+                        <div class="flex flex-col justify-center w-32 sm:w-40 h-26">
+                            <img src="{{ asset('images/icons/ImageIconBrown.png') }}" alt=""
+                                class="w-full h-full object-cover rounded-xl">
                         </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
-
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
-                        </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
-
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
-                        </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
-
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
-                        </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
-
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class="rounded-full w-10 h-10 object-cover">
-                        </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
-
-                <label class="relative  mr-4 mb-4 flex items-center">
-                    <span class="mr-2">
-                        <div class=" border-2 rounded-full border-black w-12 flex justify-center">
-                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
-                                class=" rounded-full w-10 h-10 object-cover">
-                        </div>
-                    </span>
-                    <p class="font-itim text-black text-lg">Nome XXXXXXXXXXXXXX</p>
-                </label>
+                    </div>
+                </div>
+                <!-- Repetir o conteúdo conforme necessário -->
             </div>
         </div>
+        <!-- Fim Meus Cursos -->
+
+        <!-- ONGs -->
+        <div id="Pt2" class="w-full lg:w-3/12 border-2 border-black rounded-4xl mx-7 md:mx-14 my-10">
+            <div class="my-5 mx-5 md:mx-10 max-w-full flex justify-center">
+                <p class="font-itim text-black text-2xl md:text-4xl">Ongs</p>
+            </div>
+            <div id="gridCourses" class="flex flex-col justify-center items-center my-8">
+                <!-- Content -->
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+                <!-- Repetir o conteúdo conforme necessário -->
+
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+
+                <label class="relative flex items-center mb-4">
+                    <span class="mr-2">
+                        <div class="border-2 rounded-full border-black w-10 sm:w-12 flex justify-center">
+                            <img src="{{ asset('images/icons/ImageIcon.png') }}" alt="Logo"
+                                class="rounded-full w-8 sm:w-10 h-8 sm:h-10 object-cover">
+                        </div>
+                    </span>
+                    <p class="font-itim text-black text-sm sm:text-lg">Nome XXXXXXXXXXXXXX</p>
+                </label>
+            </div>
+        </div>
+        <!-- Fim ONGs -->
     </div>
     <!-- END ONGS NAMES -->
 
