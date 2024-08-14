@@ -20,6 +20,7 @@ class OngController
             'cnpj_ong' => 'nullable|string|size:18|unique:ongs,CNPJ',
             'resp_ong' => 'nullable|string|max:255',
             'cep' => 'nullable|string|max:10',
+            'compro_endereco' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'estado' => 'nullable|string|size:2',
             'cidade' => 'nullable|string|max:50',
             'complemento' => 'nullable|string|max:255',
@@ -45,6 +46,9 @@ class OngController
             'email.email' => 'O campo e-mail deve ser um endereço de e-mail válido',
             'email.unique' => 'O e-mail informado já está em uso',
             'senha.min' => 'A senha deve ter pelo menos :min caracteres',
+            'compro_endereco.image' => 'A Foto deve ser uma imagem válida',
+            'compro_endereco.mimes' => 'A Foto deve estar em um dos formatos: jpeg, png, jpg, gif',
+            'compro_endereco.max' => 'A Foto não pode ter mais que 2MB',
         ]);
 
         if ($validator->fails()) return redirect()->back()->withErrors($validator)->withInput();
@@ -64,14 +68,23 @@ class OngController
         $ong->Email = $req->input('email');
         $ong->Senha = Hash::make($req->input('senha'));
 
-
         if ($c_senha !== $senha) return redirect()->back()->withInput()->withErrors(['senha' => 'senhas não coincidem']);
 
         if ($req->hasFile('compro_endereco')) {
-            $ong->Endereco = $req->file('compro_endereco')->store('fotos', 'public');
-        }
-        else{
-            $ong->Endereco = "erro";
+            // Verifica se o arquivo é recebido
+            
+           
+            $file = $req->file('compro_endereco');
+           
+            // Se o arquivo for válido, armazena
+            if ($file->isValid()) {
+                // Armazenar o arquivo e obter o caminho
+                $path = $file->store('comprovantes', 'public'); // 'public' é a disco onde o arquivo será armazenado
+                $ong->Endereco = $path; // Salvar o caminho no banco de dados
+            }
+        } else {
+            // Para depuração, se não foi enviado
+            dd('Arquivo não enviado');
         }
 
 

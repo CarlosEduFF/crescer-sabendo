@@ -95,7 +95,6 @@
                 @endphp
                 <div class="flex items-center space-x-2 mt-10 ">
                     @if($ong)
-                    <img src="{{ asset('storage/' . $ong->Endereco) }}">
                     <p class="text-2xl">{{$ong->Nome}}</p>
                 </div>
 

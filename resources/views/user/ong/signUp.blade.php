@@ -29,7 +29,7 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Crescer Sabendo" class="h-16">
             </div>
             <h2 class="text-center text-3xl font-bold mb-6">Seja bem-vindo!!</h2>
-            <form action="/createong" method="POST">
+            <form action="/createong" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700">Nome da ONG</label>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Comprovante de endereço</label>
-                    <input type="file" name="compro_endereco" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="file" required name="compro_endereco" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Telefone</label>

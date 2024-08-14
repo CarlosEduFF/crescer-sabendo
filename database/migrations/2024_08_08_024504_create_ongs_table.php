@@ -26,7 +26,6 @@ return new class extends Migration
             $table->text('Sobre')->nullable();
             $table->string('Email')->nullable();
             $table->string('Senha')->nullable();
-            $table->unsignedInteger('Id_Voluntario')->nullable();
             $table->unsignedInteger('Id_Curso')->nullable();
             $table->foreign('Id_Curso')->references('Id_Curso')->on('cursos');
             $table->timestamps();
