@@ -115,7 +115,11 @@
     <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
         <div class="bg-white rounded-lg shadow-lg h-101  p-6 w-80 md:w-2/6 mx-4 flex flex-col">
             <div class="flex flex-col mt-20 gap-12">
-                <button class="bg-customBlue2 text-white py-2 rounded-xl hover:bg-blue-500">Ver Página da ONG</button>
+                <a class="w-full" href="{{ route('showOng', ['Id_Ong' => $ong->Id_Ong]) }}">
+                    <button class="w-full bg-customBlue2 text-white py-2 rounded-xl hover:bg-blue-500">
+                        Ver Página da ONG
+                    </button>
+                </a>
                 <button class="bg-customBlue2 text-white py-2 rounded-xl hover:bg-blue-500" onclick="toggleModal('modal-dados')">Dados de Contato</button>
 
                 <form class="" action="{{ route('deleteong', ['Id_Ong' => $ong->Id_Ong]) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta ONG?');">

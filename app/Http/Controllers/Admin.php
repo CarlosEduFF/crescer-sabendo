@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ong;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class Admin extends Controller
 {
@@ -35,5 +36,12 @@ class Admin extends Controller
         $ongs = Ong::where('Email', 'LIKE', '%' . $email . '%')->get();
 
         return view('admin.adminPage', ['ongs' => $ongs]);
+    }
+
+    // Arrumar
+    public function showOng($Id_Ong)
+    {
+        $ong = Ong::where('Id_Ong', $Id_Ong)->firstOrFail();
+        return view('user.ong.account', ['ong' => $ong]);
     }
 }

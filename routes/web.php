@@ -104,3 +104,4 @@ Route::get('/aprovarong', function () {
 });
 Route::delete('/apagarong/{Id_Ong}', [Admin::class, 'deleteOng'])->name('deleteong');
 Route::get('/searchongs', [Admin::class, 'searchOngs'])->name('searchOngs');
+Route::get('/ong/{Id_Ong}', [Admin::class, 'showOng'])->name('showOng');
