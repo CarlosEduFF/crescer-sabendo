@@ -62,6 +62,10 @@
                     <input type="text" required name="complemento" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
+                    <label class="block text-gray-700">Endereço</label>
+                    <input type="text" required name="endereco" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                </div>
+                <div class="mb-4">
                     <label class="block text-gray-700">Comprovante de endereço</label>
                     <input type="file" required name="compro_endereco" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>

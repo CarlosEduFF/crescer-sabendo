@@ -9,6 +9,7 @@ class Ong extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'Id_Ong',
         'Nome',
         'CNPJ',
         'Responsavel',

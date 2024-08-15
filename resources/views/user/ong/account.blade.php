@@ -89,7 +89,7 @@
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" class="w-full h-full rounded-tl-lg rounded-tr-lg">
             </div>
             <div class="flex items-center flex-col ">
-                
+
                 @php
                 $ong = Session::get('ong');
                 @endphp
@@ -98,7 +98,7 @@
                     <p class="text-2xl">{{$ong->Nome}}</p>
                 </div>
 
-                
+
                 @else
                 <p class="text-xl">Não há professor</p>
                 @endif
@@ -110,23 +110,21 @@
             </div>
         </div>
 
-        <section class="bg-red-600 py-3">
 
-        </section>
         <!-- Ajuda  -->
-        <section class="bg-white py-10">
-            <div class="container mx-auto text-center">
+        <section class="bg-white py-10 rounded-xl mt-10">
+            <div class="container mx-auto text-center ">
                 <h3 class="text-xl font-bold mb-4">Escolha abaixo forma pela qual deseja ajudar a ONG!</h3>
                 <div class="flex flex-wrap justify-center gap-4">
 
                     <div class="border-solid border-2 border-red-500 p-6 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                         <p class="text-sm m-5">Contribua para o futuro da nossa ONG fazendo uma doação financeira e nos ajude a continuar com o nosso trabalho.</p>
-                        <a href="#_" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Doar</a>
+                        <a href="{{$ong->Linkdoacao}}" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Doar</a>
                     </div>
 
                     <div class="border-solid border-2 border-red-500 p-6 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                         <p class="text-sm m-3">Se você prefere fazer doações de materiais ou alimentos, ficaremos muito gratos! Entre em contato conosco pelo nosso e-mail para mais detalhes.</p>
-                        <a href="#_" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Mandar E-mail</a>
+                        <a href="mailto:{{$ong->Email}}" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Mandar E-mail</a>
                     </div>
 
                     <div class="border-solid border-2 border-red-500 p-6 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
@@ -137,7 +135,7 @@
             </div>
         </section>
 
-        </section>
+
 
         <!-- Cursos e Professores Section -->
         <section class=" py-10">

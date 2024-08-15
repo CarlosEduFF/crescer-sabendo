@@ -8,7 +8,20 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     *
      */
+    protected $table = 'ongs';
+
+    // Define a chave primária
+    protected $primaryKey = 'Id_Ong';
+
+    // Indica que a chave primária é um inteiro auto-incrementável
+    public $incrementing = true;
+
+    // Define o tipo de chave primária
+    protected $keyType = 'int';
+
     public function up(): void
     {
         Schema::create('ongs', function (Blueprint $table) {
@@ -17,6 +30,7 @@ return new class extends Migration
             $table->string('CNPJ', 18)->nullable();
             $table->string('Responsavel')->nullable();
             $table->string('Endereco')->nullable();
+            $table->string('ComprovanteEndereco')->nullable();
             $table->string('CEP', 10)->nullable();
             $table->string('Estado', 2)->nullable();
             $table->string('Cidade')->nullable();

@@ -300,9 +300,22 @@ function toggleText(id) {
     const element = document.getElementById(id);
     element.classList.toggle("hidden");
 }
-function toggleModal(modalID) {
-    document.getElementById(modalID).classList.toggle("hidden");
+function openModal(nome, email, telefone, endereco) {
+    // Atualiza o conteúdo do modal com os dados da ONG
+    document.getElementById("modal-nome").textContent = nome;
+    document.getElementById("modal-email").textContent = email;
+    document.getElementById("modal-telefone").textContent = telefone;
+    document.getElementById("modal-endereco").textContent = endereco;
+
+    // Mostra o modal
+    toggleModal("modal");
 }
+
+function toggleModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.toggle("hidden");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     document
         .getElementById("mobile-menu-toggle")
@@ -338,4 +351,3 @@ function iniciarJavaScript() {
         modal.classList.add("hidden");
     });
 }
-

@@ -60,6 +60,7 @@ class OngController
         $ong->Responsavel = $req->input('resp_ong');
         $ong->CEP = $req->input('cep');
         $ong->Estado = $req->input('estado');
+        $ong->Endereco = $req->input('endereco');
         $ong->Cidade = $req->input('cidade');
         $ong->Complemento = $req->input('complemento');
         $ong->Telefone = $req->input('telefone');
@@ -72,15 +73,15 @@ class OngController
 
         if ($req->hasFile('compro_endereco')) {
             // Verifica se o arquivo é recebido
-            
-           
+
+
             $file = $req->file('compro_endereco');
-           
+
             // Se o arquivo for válido, armazena
             if ($file->isValid()) {
                 // Armazenar o arquivo e obter o caminho
                 $path = $file->store('comprovantes', 'public'); // 'public' é a disco onde o arquivo será armazenado
-                $ong->Endereco = $path; // Salvar o caminho no banco de dados
+                $ong->ComprovanteEndereco = $path; // Salvar o caminho no banco de dados
             }
         } else {
             // Para depuração, se não foi enviado

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\OngController;
@@ -97,9 +98,9 @@ Route::get('/prof/notas', function () {
 
 
 // Admin
-Route::get('/admin', function () {
-    return view('admin/adminPage');
-});
+Route::get('/admin', [Admin::class, 'getOng']);
 Route::get('/aprovarong', function () {
     return view('admin/aprovarOng');
 });
+Route::delete('/apagarong/{Id_Ong}', [Admin::class, 'deleteOng'])->name('deleteong');
+Route::get('/searchongs', [Admin::class, 'searchOngs'])->name('searchOngs');
